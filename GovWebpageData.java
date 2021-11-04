@@ -4,7 +4,7 @@ import java.util.*;
 public class GovWebpageData{
   public static void main(String[] args) throws FileNotFoundException{
     File f = new File("all-domains-30-days.csv");
-    //mostVisits(f);
+    mostVisits(f);
     mostVisitLeastExit(f,1,0,6);
   }
 
@@ -50,5 +50,33 @@ public class GovWebpageData{
     System.out.println("The domain with the most visits and least exits is "+domain);
 
   }
+
+  public static void mostVisits(File f) throws FileNotFoundException{
+      Scanner sc = new Scanner(f);
+      sc.useDelimiter(",");
+      //start from line2
+      sc.nextLine();
+      String domain = sc.next();
+      int maxVisits = sc.nextInt();
+      String tempDomain = "";
+      int tempVisits = 0;
+      sc.nextLine();
+      while (sc.hasNextLine()){
+        //scan for the first block and store it in temp domain
+        tempDomain = sc.next();
+        //scan the next int and compare it to maxVisits
+        tempVisits = sc.nextInt();
+        //if the next int is greater than maxVisits, maxVisits = newNum and change domain to temp
+        if (tempVisits>maxVisits){
+          maxVisits=tempVisits;
+          domain = tempDomain;
+        }
+        //move on to next line
+        sc.nextLine();
+      }
+      //print the domain with most visits
+      System.out.println("Domain with most visits: "+domain);
+  }
+
 
 }
