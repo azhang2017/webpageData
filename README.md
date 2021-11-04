@@ -1,6 +1,6 @@
-# Webpage Popularity Ranking
+# Government Webpage Popularity Ranking
 
-This is what my repository is
+This repository contains the government webpage popularity data, code used to process my data, and this README.
 
 ## Introduction
 
@@ -12,4 +12,4 @@ here are my methods
 
 ## Results and Conclusions
 
-here is what I found 
+here is what I found
