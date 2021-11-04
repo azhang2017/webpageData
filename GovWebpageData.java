@@ -78,5 +78,4 @@ public class GovWebpageData{
       System.out.println("Domain with most visits: "+domain);
   }
 
-
 }
